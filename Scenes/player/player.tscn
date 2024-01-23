@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo2oewm4uuqyv"]
+
+[ext_resource type="Texture2D" uid="uid://bug0rt60k73gu" path="res://Scenes/player/Sprites/Ship.png" id="1_efihr"]
+[ext_resource type="Script" path="res://Scenes/player/Scripts/player.gd" id="1_xv08a"]
+[ext_resource type="PackedScene" uid="uid://demsvbl5ro8i7" path="res://Scenes/Projectile/Projectile.tscn" id="2_71pr3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwfxd"]
+radius = 8.06226
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 1
+collision_mask = 0
+script = ExtResource("1_xv08a")
+projectile_scene = ExtResource("2_71pr3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_efihr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_qwfxd")
